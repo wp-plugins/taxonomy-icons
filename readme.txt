@@ -27,7 +27,7 @@ Taxonomy Icons gives you an easy-to-use icon selector that is available when cre
 
 Both methods of output utilize the same attributes/parameters:
 
-**term_id**	
+**term_id**    
 The ID of the taxonomy term for which to output the associated icon. If no term_id is specified, the plugin will attempt to determine the current taxonomy term.
 
 **class**	

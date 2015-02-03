@@ -73,9 +73,6 @@ Use the `wp_enqueue_scripts` and `admin_enqueue_scripts` hooks to enqueue your c
 1. Upload the entire `/taxonomy-icons` directory to the `/wp-content/plugins/` directory.
 2. Activate Taxonomy Icons through the 'Plugins' menu in WordPress.
 
-== Frequently Asked Questions ==
-
-
 == Screenshots ==
 1. Adding a new "Travel" category with the plane icon.
 2. Icons automatically display in all admin views to easily see which taxonomy terms do/don't have icons.

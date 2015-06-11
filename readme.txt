@@ -3,8 +3,8 @@ Contributors:      McGuive7, MIGHTYminnow, Braad
 Donate link:       http://wordpress.org/plugins/taxonomy-icons
 Tags:              taxonomy, category, tag, taxonomies, categories, tags, term, icon, better, font, awesome
 Requires at least: 3.5
-Tested up to:      4.1
-Stable tag:        1.0.0
+Tested up to:      4.2
+Stable tag:        1.0.1
 License:           GPLv2 or later
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,10 +79,16 @@ Use the `wp_enqueue_scripts` and `admin_enqueue_scripts` hooks to enqueue your c
 
 == Changelog ==
 
+= 1.0.1 =
+* Update JS to allow for custom icon filtering without prefixes.
+
 = 1.0.0 =
 * First release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Update JS to allow for custom icon filtering without prefixes.
 
 = 1.0.0 =
 First Release

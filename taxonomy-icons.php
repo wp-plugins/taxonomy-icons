@@ -3,7 +3,7 @@
  * Plugin Name: Taxonomy Icons
  * Plugin URI:  http://wordpress.org/plugins/taxonomy-icons
  * Description: Add custom icons to your taxonomy terms.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      MIGHTYminnow Web Studio & School
  * Author URI:  http://mickeykaycreative.com
  * License:     GPLv2+
@@ -286,7 +286,7 @@ function tax_icons_get_icon_array() {
 	// Add prefix to icon array
 	$prefix = $bfa->get_prefix();
 	foreach ( $icons as $index => $icon ) {
-		$updated_icons[ $icon ] = "$prefix $prefix-$icon";
+		$updated_icons[ $icon ] = $prefix ? "$prefix $prefix-$icon" : $icon;
 	}
 
 	/**

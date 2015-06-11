@@ -32,13 +32,10 @@ The Better Font Awesome Library contains a [Git submodule](http://git-scm.com/bo
 git clone --recursive https://github.com/MickeyKay/better-font-awesome-library.git
 ```
 
-Alternately, if you've already cloned the repo and need to add the submodules, you can run the following commands:
+Alternately, if you've already cloned the repo and need to add the submodules, you can run the following command:
 ```
-// Initialize all submodules.
-git submodule init
-
-// Pull in updated copies of all submodules.
-git submodule update
+// Initialize and update all submodules.
+git submodule update --init --recursive
 ```
 
 ## Usage ##
@@ -49,7 +46,7 @@ git submodule update
    	// Include the main library file. Make sure to modify the path to match your directory structure.
 	require_once ( dirname( __FILE__ ) . '/better-font-awesome-library/better-font-awesome-library.php' );
 
-	add_action( 'plugins_loaded', 'my_prefix_load_bfa' );
+	add_action( 'init', 'my_prefix_load_bfa' );
 	/**	
 	 * Initialize the Better Font Awesome Library.
 	 *
@@ -79,8 +76,10 @@ git submodule update
 #### Usage Notes ####
 The Better Font Awesome Library is designed to work in conjunction with the [Better Font Awesome](https://wordpress.org/plugins/better-font-awesome/) WordPress plugin. The plugin initializes this library (with its initialization args) on the `plugins_loaded` hook, priority `5`. When using the Better Font Awesome Library in your project, you have two options:
 
-1. Initialize later, to ensure that any Better Font Awesome plugin settings override yours.
+1. Initialize later, to ensure that any Better Font Awesome plugin settings override yours (this is the default behavior, shown above by initializing the library on the `init` hook, which comes after the `plugins_loaded` hook).
 1. Initialize earlier, to "take over" and prevent Better Font Awesome settings from having an effect.
+
+**Note:** if you're using the library in a theme, the `plugins_loaded` hook has already fired and is unavailable to you. This behavior is intended - if your theme utilizes the library, and the Better Font Awesome plugin is also installed, users should be able to override all Font Awesome behavior/settings via the admin options provided via the plugin.
 
 ## Initialization Parameters ($args) ##
 The following arguments can be used to initialize the library using `Better_Font_Awesome_Library::get_instance( $args )`:
@@ -276,6 +275,7 @@ Applied to the boolean that determines whether or not to suppress all Font Aweso
 ## To Do ##
 Ideas? File an issue or add a pull request!
 * Add README section on manually updating the fallback version.
+* Remove existing FA? - move to later hook so that it works for styles enqueued via shortcode (= wp_footer basically)
 
 ## Credits ##
 Special thanks to the following folks and their plugins for inspiration and support:

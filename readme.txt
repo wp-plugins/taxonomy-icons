@@ -80,7 +80,7 @@ Use the `wp_enqueue_scripts` and `admin_enqueue_scripts` hooks to enqueue your c
 == Changelog ==
 
 = 1.0.2 =
-* Update Better Font Awesome Library with updated JS to initialize icon picker.
+* Update Better Font Awesome Library with better prefix removal method and updated JS to initialize icon picker.
 
 = 1.0.1 =
 * Update JS to allow for custom icon filtering without prefixes.

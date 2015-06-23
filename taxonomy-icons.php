@@ -3,7 +3,7 @@
  * Plugin Name: Taxonomy Icons
  * Plugin URI:  http://wordpress.org/plugins/taxonomy-icons
  * Description: Add custom icons to your taxonom terms.
- * Version:     1.0.2
+ * Version:     1.0.3
  * Author:      MIGHTYminnow Web Studio & School
  * Author URI:  http://mickeykaycreative.com
  * License:     GPLv2+
@@ -32,7 +32,7 @@
 /**
  * Define constants.
  */
-define( 'TAX_ICONS_VERSION', '1.0.2' );
+define( 'TAX_ICONS_VERSION', '1.0.3' );
 define( 'TAX_ICONS_URL',     plugin_dir_url( __FILE__ ) );
 define( 'TAX_ICONS_PATH',    plugin_dir_path( __FILE__ ) );
 
@@ -60,7 +60,7 @@ function tax_icons_init() {
 	load_plugin_textdomain( 'taxonomy-icons', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
-add_action( 'plugins_loaded', 'tax_icons_load_bfa' );
+add_action( 'init', 'tax_icons_load_bfa' );
 /**
  * Initialize the Better Font Awesome Library
  */
@@ -156,7 +156,7 @@ function tax_icons_admin_scripts_and_styles() {
 
 }
 
-add_action( 'init', 'tax_icons_add_taxonomy_filters' );
+add_action( 'init', 'tax_icons_add_taxonomy_filters', 15 );
 /**
  * Add appropriate filters for all taxonomies.
  *
